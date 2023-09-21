@@ -3,56 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
 </head>
 <body>
     <form action="/save" method="post">
             <label>ID</label>
-            <input type="hidden" name= "id" value="<?= isset($pro['id']) ? $pro['id'] : '' ?>"   >
+            <input type="hidden" name= "ProductID" value="<?= isset($pro['ProductID']) ? $pro['ProductID'] : '' ?>"   >
             <br>
-            <label>UPC</label>
-            <input type="text" name= "upc" placeholder="UPC" value="<?= isset($pro['upc']) ? $pro['upc'] : '' ?>"   >
+            <label>Product Name</label>
+            <input type="text" name= "ProductName" placeholder="Name" value="<?= isset($pro['ProductName']) ? $pro['ProductName'] : '' ?>"   >
             <br>
-            <label>Name</label>
-            <input type="text" name= "name" placeholder="Name" value="<?= isset($pro['name']) ? $pro['name'] : '' ?>" >
+            <label>Product Description</label>
+            <input type="text" name= "ProductDescription" placeholder="Description" value="<?= isset($pro['ProductDescription']) ? $pro['ProductDescription'] : '' ?>" >
             <br>
-            <label>Quantity</label>
-            <input type="text" name= "quantity" placeholder="Quantity" value="<?= isset($pro['quantity']) ? $pro['quantity'] : '' ?>" >
+            <label>Product Category</label>
+            <input type="text" name= "ProductCategory" placeholder="Category" value="<?= isset($pro['ProductCategory']) ? $pro['ProductCategory'] : '' ?>" >
             <br>
-            <label>Price</label>
-            <input type="text" name= "price" placeholder="Price" value="<?= isset($pro['price']) ? $pro['price'] : '' ?>" >
+            <label>Product Quantity</label>
+            <input type="number" name= "ProductQuantity" placeholder="Quantity" value="<?= isset($pro['ProductQuantity']) ? $pro['ProductQuantity'] : '' ?>" >
             <br>
-            <label>Expiry Date</label>
-            <input type="date" name= "expiry_date" value="<?= isset($pro['expiry_date']) ? $pro['expiry_date'] : '' ?>">
-            <br>
-            <label>Created</label>
-            <input type="date" name= "created_at" value="<?= isset($pro['created_at']) ? $pro['created_at'] : '' ?>">
+            <label>Product Price</label>
+            <input type="number" name= "ProductPrice" placeholder="Price" value="<?= isset($pro['ProductPrice']) ? $pro['ProductPrice'] : '' ?>">
             <br>
             <input type="submit" value="save">
         </form>
 
-    <h1>Products</h1>
+    <h1>Add Product</h1>
     <table border ="1">
         <tr>
             <th>ID</th>
-            <th>UPC</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Expiry Date</th>
-            <th>Created</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Product Category</th>
+            <th>Product Quantity</th>
+            <th>Product Price</th>
             <th>Action</th>
         </tr>
         <?php foreach($product as $pr):?>
             <tr>
-                <td><?= $pr ['id'] ?></td>
-                <td><?= $pr ['upc'] ?></td>
-                <td><?= $pr ['name'] ?></td>
-                <td><?= $pr ['quantity'] ?></td>
-                <td><?= $pr ['price'] ?></td>
-                <td><?= $pr ['expiry_date'] ?></td>
-                <td><?= $pr ['created_at'] ?></td>
-                <td><a href="/delete/<?= $pr['id'] ?>">Delete</a> || <a href="/edit/<?= $pr['id'] ?>">Update</a></td>
+                <td><?= $pr ['ProductID'] ?></td>
+                <td><?= $pr ['ProductName'] ?></td>
+                <td><?= $pr ['ProductDescription'] ?></td>
+                <td><?= $pr ['ProductCategory'] ?></td>
+                <td><?= $pr ['ProductQuantity'] ?></td>
+                <td><?= $pr ['ProductPrice'] ?></td>
+                <td><a href="/delete/<?= $pr['ProductID'] ?>">Delete</a> || <a href="/edit/<?= $pr['id'] ?>">Update</a></td>
             </tr>
         
         <?php endforeach; ?>
