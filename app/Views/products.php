@@ -17,7 +17,14 @@
             <input type="text" name= "ProductDescription" placeholder="Description" value="<?= isset($pro['ProductDescription']) ? $pro['ProductDescription'] : '' ?>" >
             <br>
             <label>Product Category</label>
-            <input type="text" name= "ProductCategory" placeholder="Category" value="<?= isset($pro['ProductCategory']) ? $pro['ProductCategory'] : '' ?>" >
+            <select name="ProductCategory" value="<?= isset($pro['ProductDescription']) ? $pro['ProductDescription'] : '' ?>">
+            <option value="Drinks"<?= isset($pro['ProductCategory']) && $pro['ProductCategory'] === 'Drinks' ? 'selected' : '' ?>>Drinks</option>
+            <option value="Chips"<?= isset($pro['ProductCategory']) && $pro['ProductCategory'] === 'Chips' ? 'selected' : '' ?>>Chips</option>
+            <option value="Meat"<?= isset($pro['ProductCategory']) && $pro['ProductCategory'] === 'Meat' ? 'selected' : '' ?>>Meat</option>
+            <option value="Chocolate"<?= isset($pro['ProductCategory']) && $pro['ProductCategory'] === 'Chocolate' ? 'selected' : '' ?>>Chocolate</option>
+            <option value="Vegetables"<?= isset($pro['ProductCategory']) && $pro['ProductCategory'] === 'Vegetables' ? 'selected' : '' ?>>Vegetables</option>
+            </option>
+            </select>
             <br>
             <label>Product Quantity</label>
             <input type="number" name= "ProductQuantity" placeholder="Quantity" value="<?= isset($pro['ProductQuantity']) ? $pro['ProductQuantity'] : '' ?>" >
@@ -28,7 +35,7 @@
             <input type="submit" value="save">
         </form>
 
-    <h1>Add Product</h1>
+    <h1>Products</h1>
     <table border ="1">
         <tr>
             <th>ID</th>

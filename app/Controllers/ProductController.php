@@ -31,19 +31,18 @@ class ProductController extends BaseController
 
     public function save()
     {
-        $id=$_POST['id'];
+        $id=$_POST['ProductID'];
         $data = [
-        'id' => $this ->request-> getVar('id'), 
-        'upc' => $this ->request-> getVar('upc'), 
-        'name' => $this ->request-> getVar('name'), 
-        'quantity' => $this ->request-> getVar('quantity'), 
-        'price' => $this ->request-> getVar('price'),
-        'expiry_date' => $this ->request-> getVar('expiry_date'), 
-        'created_at' => $this ->request-> getVar('created_at')
+        'ProductID' => $this ->request-> getVar('ProductID'), 
+        'ProductName' => $this ->request-> getVar('ProductName'), 
+        'ProductDescription' => $this ->request-> getVar('ProductDescription'), 
+        'ProductCategory' => $this ->request-> getVar('quantity'), 
+        'ProductQuantity' => $this ->request-> getVar('ProductQuantity'),
+        'ProductPrice' => $this ->request-> getVar('expiry_date'), 
         ];
 
         if($id!=null){
-            $this->product->set($data)->where('id' , $id)->update();
+            $this->product->set($data)->where('ProductID' , $id)->update();
         }
         else{
             $this->product->insert($data);
