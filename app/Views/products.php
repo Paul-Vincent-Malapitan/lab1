@@ -44,7 +44,7 @@
             <th>Product Category</th>
             <th>Product Quantity</th>
             <th>Product Price</th>
-            <th>Controls</th>
+            <th>Action</th>
         </tr>
         <?php foreach($product as $pr):?>
             <tr>
